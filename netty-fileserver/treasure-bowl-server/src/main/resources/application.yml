@@ -1,0 +1,22 @@
+debug: true
+
+netty:
+  port: 8080
+  boss-threads: 1
+  worker-threads: 8
+  max-current: 128
+  max-in-memory: 1048576
+
+nginx:
+  download: true
+
+transfer:
+  worker-threads: 64
+
+
+local:
+  target: /Users/hexiufeng/work/local-root/
+
+spring:
+  profiles:
+    include: db

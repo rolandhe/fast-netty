@@ -1,0 +1,17 @@
+<!--<configuration debug="true">-->
+<configuration>
+    <property name="APP_NAME" value="minnovation"/>
+
+    <logger name="com.minnovation.mybatis.extension.interceptors.ExecutorInterceptor" level="INFO"/>
+    <logger name="com.zaxxer.hikari" level="ERROR"/>
+
+    <if condition='isNull("SPRING_PROFILES_ACTIVE") || property("SPRING_PROFILES_ACTIVE").equals("local") || property("SPRING_PROFILES_ACTIVE").equals("dev")'>
+        <then>
+            <include resource="include/dev-include.xml"/>
+<!--            <include resource="include/prod-include.xml"/>-->
+        </then>
+        <else>
+            <include resource="include/prod-include.xml"/>
+        </else>
+    </if>
+</configuration>
